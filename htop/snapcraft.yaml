@@ -2,13 +2,14 @@ name: htop
 version: "2.0.2"
 summary: Interactive processes viewer
 description: |
-  Htop is an interactive process viewer for Unix systems. It is a text-mode application (for console or X terminals) and requires ncurses.
+  Htop is an interactive process viewer for Unix systems. It is a text-mode application (for console or X terminals) and uses ncurses.
 grade: stable 
 confinement: strict
 
 apps:
   htop:
-    command: htop
+    command: bin/htop
+    plugs: [system-observe, process-control]
 
 parts:
   htop:
